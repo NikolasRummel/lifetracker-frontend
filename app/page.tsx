@@ -1,8 +1,10 @@
 import ThemeChanger from "@/components/theme-toggle";
 import Widget from "@/components/widget";
 import UserWidget from "@/components/user-widget";
+import Example from "@/components/charts/culinarium-chart";
 
-export default function Home() {
+export default async function Home() {
+
     return (
         <main className="min-h-screen flex items-center justify-center px-20">
             <div className={"w-[1200px]"}>
@@ -15,7 +17,6 @@ export default function Home() {
 
                 <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-40"}>
                     <UserWidget image={"https://nikolas-rummel.de/images/me.png"} name={"Nikolas"} email={"privat@nikolas-rummel.de"}>
-
                     </UserWidget>
                     <Widget title={"Calendar"} description={"Mi. 29. Nov 2023"} colSpan={2}>
                         <p>d</p>
@@ -24,7 +25,9 @@ export default function Home() {
                         <p>d</p>
                     </Widget>
                     <Widget title={"Calendar"} description={"Mi. 29. Nov 2023"} colSpan={1}>
-                        <p>d</p>
+                        <div className={"relative"}>
+                            <Example/>
+                        </div>
                     </Widget>
                 </div>
             </div>

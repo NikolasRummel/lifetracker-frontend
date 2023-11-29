@@ -22,7 +22,7 @@ const Widget = ({title, description, children, colSpan}: WidgetProps) => {
                 </div>
             </div>
             <div className={"rounded-b-3xl bg-neutral-50 dark:bg-neutral-900 flex justify-center "}>
-                <div className={"py-28"}>
+                <div className={""}>
                     {children}
                 </div>
             </div>
