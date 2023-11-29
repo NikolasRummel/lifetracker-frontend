@@ -1,5 +1,4 @@
 import ThemeChanger from "@/components/theme-toggle";
-import {CalendarIcon} from "lucide-react";
 import Widget from "@/components/widget";
 
 export default function Home() {
@@ -14,12 +13,18 @@ export default function Home() {
                 </div>
 
                 <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-40"}>
-                    <Widget/>
-                    <Widget/>
-                    <Widget/>
-                    <Widget/>
-                    <Widget/>
-                    <Widget/>
+                    <Widget title={"Calendar"} description={"Mi. 29. Nov 2023"} colSpan={1}>
+                        <p>d</p>
+                    </Widget>
+                    <Widget title={"Calendar"} description={"Mi. 29. Nov 2023"} colSpan={2}>
+                        <p>d</p>
+                    </Widget>
+                    <Widget title={"Calendar"} description={"Mi. 29. Nov 2023"} colSpan={2}>
+                        <p>d</p>
+                    </Widget>
+                    <Widget title={"Calendar"} description={"Mi. 29. Nov 2023"} colSpan={1}>
+                        <p>d</p>
+                    </Widget>
                 </div>
             </div>
         </main>
