@@ -1,0 +1,27 @@
+import ThemeChanger from "@/components/theme-toggle";
+import {CalendarIcon} from "lucide-react";
+import Widget from "@/components/widget";
+
+export default function Home() {
+    return (
+        <main className="min-h-screen flex items-center justify-center px-20">
+            <div className={"w-[1200px]"}>
+                <ThemeChanger/>
+
+                <div className={"flex flex-col items-center justify-center"}>
+                    <h1 className={"text-4xl font-bold text-sky-900"}>Availio</h1>
+                    <h2 className={"text-2xl font-semibold text-sky-900"}>A better way to manage your availability</h2>
+                </div>
+
+                <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-40"}>
+                    <Widget/>
+                    <Widget/>
+                    <Widget/>
+                    <Widget/>
+                    <Widget/>
+                    <Widget/>
+                </div>
+            </div>
+        </main>
+    )
+}
