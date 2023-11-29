@@ -1,5 +1,6 @@
 import ThemeChanger from "@/components/theme-toggle";
 import Widget from "@/components/widget";
+import UserWidget from "@/components/user-widget";
 
 export default function Home() {
     return (
@@ -13,9 +14,9 @@ export default function Home() {
                 </div>
 
                 <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-40"}>
-                    <Widget title={"Calendar"} description={"Mi. 29. Nov 2023"} colSpan={1}>
-                        <p>d</p>
-                    </Widget>
+                    <UserWidget image={"https://nikolas-rummel.de/images/me.png"} name={"Nikolas"} email={"privat@nikolas-rummel.de"}>
+
+                    </UserWidget>
                     <Widget title={"Calendar"} description={"Mi. 29. Nov 2023"} colSpan={2}>
                         <p>d</p>
                     </Widget>
