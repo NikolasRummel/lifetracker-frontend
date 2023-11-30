@@ -30,7 +30,7 @@ const SevenSegmentClock: React.FC = () => {
 
     return (
         <div
-            className="p-10 shadow-xl hover:shadow-2xl hover:scale-[1.02] duration-300 rounded-3xl col-span h-full">
+            className="p-10 hover:scale-[1.02] duration-300 rounded-3xl col-span h-full">
             {renderClock()}
             <div className="text-gray-500 dark:text-gray-400">
                 {time.toLocaleString('en-US', {weekday: 'long'})}, {time.getDate()}.{time.getMonth() + 1}.{time.getFullYear()}
