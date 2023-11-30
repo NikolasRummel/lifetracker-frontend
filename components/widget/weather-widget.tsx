@@ -76,10 +76,8 @@ const WeatherWidget: React.FC = () => {
                         </div>
                     </div>
                     <span className="block text-xl">{weatherData?.description}</span>
-
                     <span className="block text-xl mt-10">Feels Like: {weatherData?.feelsLike.toFixed(0)}°C</span>
-                    <span
-                        className="block text-xl">H: {weatherData?.maxTemperature.toFixed(0)}°C M:{weatherData?.minTemperature.toFixed(0)}°C</span>
+                    <span className="block text-xl">H: {weatherData?.maxTemperature.toFixed(0)}°C M:{weatherData?.minTemperature.toFixed(0)}°C</span>
                 </div>
             )}
         </div>

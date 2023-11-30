@@ -3,6 +3,7 @@ import UserWidget from "@/components/widget/user-widget";
 import Example from "@/components/charts/culinarium-chart";
 import culinarium from "@/public/images/culinarium.png";
 import WeatherWidget from "@/components/widget/weather-widget";
+import SevenSegmentClock from "@/components/widget/clock-widget";
 
 export default async function Home() {
     return (
@@ -27,6 +28,7 @@ export default async function Home() {
                         </div>
                     </Widget>
                     <WeatherWidget/>
+                    <SevenSegmentClock/>
                 </div>
             </div>
         </section>
