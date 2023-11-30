@@ -6,6 +6,10 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'nikolas-rummel.de',
             },
+            {
+                protocol: 'https',
+                hostname: 'openweathermap.org',
+            },
         ],
     },
 }
