@@ -1,8 +1,8 @@
 import Widget from "@/components/widget";
-import UserWidget from "@/components/user-widget";
+import UserWidget from "@/components/widget/user-widget";
 import Example from "@/components/charts/culinarium-chart";
 import culinarium from "@/public/images/culinarium.png";
-import WeatherWidget from "@/components/weather";
+import WeatherWidget from "@/components/widget/weather-widget";
 
 export default async function Home() {
     return (
