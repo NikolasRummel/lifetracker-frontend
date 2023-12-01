@@ -21,6 +21,7 @@ export default function Sidebar({open}: SidebarProps) {
                     <ul className="gap-2 mt-2 pl-2">
                         <p className={"text-blue-600 text-sm font-bold uppercase mb-2"}>Dashboard</p>
                         <SidebarLink link="/" label="Home" lucidIcon={HomeIcon}/>
+                        <SidebarLink link="/test" label="Home" lucidIcon={HomeIcon}/>
                     </ul>
                 </nav>
             </div>

@@ -2,6 +2,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import Image from "next/image";
+import {Skeleton} from "@/components/ui/skeleton";
 
 interface WeatherData {
     temperature: number;
@@ -62,7 +63,13 @@ const WeatherWidget: React.FC = () => {
     return (
         <div>
             {loading ? (
-                <p>Loading...</p>
+                <div
+                    className="p-12 bg-gradient-to-t from-sky-600 to-blue-700 dark:from-sky-950 dark:to-blue-950 shadow-xl hover:shadow-2xl hover:scale-[1.02] duration-300 rounded-3xl col-span h-[350px]">
+                    <Skeleton className="w-[100px] h-[40px] rounded-full dark:bg-neutral-200" />
+                    <Skeleton className="w-[300px] h-[40px] rounded-full dark:bg-neutral-200 mt-10" />
+                    <Skeleton className="w-[150px] h-[40px] rounded-full dark:bg-neutral-200 mt-1" />
+                    <Skeleton className="w-[200px] h-[40px] rounded-full dark:bg-neutral-200 mt-12" />
+                </div>
             ) : (
                 <div
                     className="p-12 bg-gradient-to-t from-sky-600 to-blue-700 dark:from-sky-950 dark:to-blue-950 shadow-xl hover:shadow-2xl hover:scale-[1.02] duration-300 rounded-3xl col-span h-[350px]">
