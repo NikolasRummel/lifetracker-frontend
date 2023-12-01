@@ -43,7 +43,8 @@ export default class Example extends PureComponent {
                     data={this.state.data}
                     labelLine={false}
                     label={renderCustomizedLabel}
-                    outerRadius={125}
+                    outerRadius={115}
+                    cy={135}
                     fill="#0000000"
                     dataKey="value"
                 >
