@@ -21,7 +21,7 @@ const Widget = ({title, description, children, colSpan, image}: WidgetProps) => 
                     <span>{description}</span>
                 </div>
             </div>
-            <div className={"rounded-b-3xl bg-neutral-50 dark:bg-neutral-800 flex justify-center h-[275px]"}>
+            <div className={"rounded-b-3xl bg-neutral-50 dark:bg-neutral-800 flex h-[275px]"}>
                 {children}
             </div>
         </div>
