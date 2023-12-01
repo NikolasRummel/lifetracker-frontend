@@ -10,7 +10,7 @@ interface UserWidgetProps {
 const UserWidget = ({image, name, email}: UserWidgetProps) => {
     return (
         <div
-            className={"p-10 bg-gradient-to-t from-sky-100 to-blue-300 dark:from-sky-500 dark:to-blue-700 shadow-xl hover:shadow-2xl hover:scale-[1.02] duration-300 rounded-3xl col-span-1"}>
+            className={"p-10 bg-gradient-to-t from-sky-100 to-blue-300 dark:from-sky-500 dark:to-blue-700 shadow-xl hover:shadow-2xl hover:scale-[1.02] duration-300 rounded-3xl col-span-1 h-[350px]"}>
             <Image
                 className="object-cover rounded-full shadow-2xl aspect-square mb-10"
                 src={image} alt={name}

@@ -65,7 +65,7 @@ const WeatherWidget: React.FC = () => {
                 <p>Loading...</p>
             ) : (
                 <div
-                    className="p-12 bg-gradient-to-t from-sky-600 to-blue-700 dark:from-sky-950 dark:to-blue-950 shadow-xl hover:shadow-2xl hover:scale-[1.02] duration-300 rounded-3xl col-span h-full">
+                    className="p-12 bg-gradient-to-t from-sky-600 to-blue-700 dark:from-sky-950 dark:to-blue-950 shadow-xl hover:shadow-2xl hover:scale-[1.02] duration-300 rounded-3xl col-span h-[350px]">
                     <div className={"mb-4"}>
                         <span className="block text-3xl ">Karlsruhe</span>
                         <div className="flex items-center">
