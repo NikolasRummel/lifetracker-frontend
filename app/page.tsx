@@ -2,6 +2,7 @@ import Widget from "@/components/widget/widget";
 import UserWidget from "@/components/widget/user-widget";
 import Example from "@/components/charts/culinarium-chart";
 import culinarium from "@/public/images/culinarium.png";
+import todo from "@/public/images/todo.png";
 import WeatherWidget from "@/components/widget/weather-widget";
 import SevenSegmentClock from "@/components/widget/clock-widget";
 import TodoWidget from "@/components/widget/todo-widget";
@@ -24,13 +25,13 @@ export default async function Home() {
                         <WeatherWidget/>
                     </div>
 
+                    <TodoWidget title={"Todo"} description={"Your tasks for today"} colSpan={2} image={todo}/>
+
                     <Widget title={"Culinarium"} description={"Current capacity"} colSpan={1} image={culinarium}>
                         <div className={"relative"}>
                             <Example/>
                         </div>
                     </Widget>
-                    <TodoWidget title={"Todo"} description={"Your tasks for today"} colSpan={2}/>
-
                     <div className={"col-span-2"}>
                         <Widget title={"Calendar"} description={"Mi. 29. Nov 2023"} colSpan={2}>
                             <div></div>
