@@ -9,7 +9,7 @@ import TodoWidget from "@/components/widget/todo-widget";
 
 export default async function Home() {
     return (
-        <section className="min-h-screen flex items-center justify-center px-20">
+        <section className="min-h-screen flex items-center justify-center px-20 mb-20">
             <div className={"w-[1200px]"}>
                 <div className="inline-flex items-center justify-center space-x-80 mr-2">
                     <div className="flex flex-col">
@@ -30,6 +30,10 @@ export default async function Home() {
                     <Widget title={"Culinarium"} description={"Current capacity"} colSpan={1} image={culinarium}>
                         <div className={"relative"}>
                             <Example/>
+                        </div>
+                    </Widget>
+                    <Widget title={"OTHER WIDGET TYPE"} description={"Soon"} colSpan={1} >
+                        <div className={"relative"}>
                         </div>
                     </Widget>
                     <div className={"col-span-2"}>
