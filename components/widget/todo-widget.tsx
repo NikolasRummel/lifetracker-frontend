@@ -1,13 +1,10 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StaticImageData } from 'next/image';
 import Widget from "@/components/widget/widget";
 import { Checkbox } from "@/components/ui/checkbox";
-
-interface Task {
-    id: number;
-    text: string;
-}
+import { addTask, getTasks, removeTask, Task } from "@/api/todo-api";
+import { v4 as uuidv4 } from 'uuid';
 
 interface TodoWidgetProps {
     title: string;
@@ -20,36 +17,57 @@ const TodoWidget: React.FC<TodoWidgetProps> = ({ title, description, colSpan, im
     const [tasks, setTasks] = useState<Task[]>([]);
     const [newTask, setNewTask] = useState('');
 
-    const handleAddTask = (e: React.FormEvent) => {
-        e.preventDefault();
+    useEffect(() => {
+        console.log('useEffect is running');
+        fetchTasks();
+    }, []);
 
-        if(tasks.length > 7) return; //prevent overflow
-
-        if (newTask.trim() !== '') {
-            setTasks((prevTasks) => [
-                ...prevTasks,
-                {
-                    id: Date.now(),
-                    text: newTask.trim(),
-                },
-            ]);
-            setNewTask('');
+    const fetchTasks = async () => {
+        try {
+            const fetchedTasks = await getTasks();
+            setTasks(fetchedTasks);
+        } catch (error) {
+            console.error('Error fetching tasks:', error);
         }
     };
 
-    const handleRemoveTask = (taskId: number) => {
-        setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
+    const handleAddTask = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        if (tasks.length > 7) return; // Prevent overflow
+
+        if (newTask.trim() !== '') {
+            try {
+                const addedTask = await addTask({
+                    id: uuidv4(),
+                    text: newTask.trim(),
+                });
+                setTasks((prevTasks) => [...prevTasks, addedTask]);
+                setNewTask('');
+            } catch (error) {
+                console.error('Error adding task:', error);
+            }
+        }
+    };
+
+    const handleRemoveTask = async (taskId: string) => {
+        try {
+            await removeTask(taskId);
+            setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
+        } catch (error) {
+            console.error('Error removing task:', error);
+        }
     };
 
     return (
         <Widget title={title} description={description} colSpan={colSpan} image={image}>
             <div className="w-full ml-4 relative">
-                <ul className="p-0 mb-4 h-4/5 overflow-y-auto mt-4 z-10"> {/* Added z-10 for higher z-index */}
+                <ul className="p-0 mb-4 h-4/5 overflow-y-auto mt-4 z-10">
                     {tasks.map((task) => (
                         <li key={task.id} className="flex items-center mb-2">
-                            <Checkbox id={task.id + ""} onClick={() => handleRemoveTask(task.id)} />
+                            <Checkbox id={task.id} onClick={() => handleRemoveTask(task.id)} />
                             <label
-                                htmlFor={task.id + ""}
+                                htmlFor={task.id}
                                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 ml-2"
                             >
                                 {task.text}
