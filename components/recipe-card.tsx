@@ -3,14 +3,10 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import defaultRecipeImage from '@/public/images/food.png';
 import {Button} from "@/components/ui/button";
+import {Recipe} from "@/api/recipe-api";
 
 interface RecipeCardProps {
-    recipe: {
-        id: number;
-        name: string;
-        description: string;
-        imageUrl?: string;
-    };
+   recipe: Recipe;
 }
 
 const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
@@ -30,7 +26,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
                     {recipe.name}
                 </div>
                 <Image
-                    src={recipe.imageUrl ? recipe.imageUrl : defaultRecipeImage}
+                    src={defaultRecipeImage}
                     alt={recipe.name}
                     className="rounded-b-2xl w-full h-[200px] object-cover block"
                 />
