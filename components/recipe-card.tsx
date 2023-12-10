@@ -1,15 +1,16 @@
 "use client";
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Image from 'next/image';
 import defaultRecipeImage from '@/public/images/food.png';
 import {Button} from "@/components/ui/button";
 import {Recipe} from "@/api/recipe-api";
+import ViewRecipeModal from "@/components/recipe/view-recipe";
 
 interface RecipeCardProps {
-   recipe: Recipe;
+    recipe: Recipe;
 }
 
-const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
+const RecipeCard = ({recipe}: RecipeCardProps) => {
     const [isHovered, setHovered] = useState(false);
 
     return (
@@ -22,7 +23,8 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
                 {isHovered && (
                     <div className={`absolute top-0 left-0 right-0 bottom-0 bg-black/70`}></div>
                 )}
-                <div className="absolute top-0 left-0 right-0 p-4 text-white text-xl font-bold rounded-t-2xl bg-gradient-to-t from-transparent to-black/70">
+                <div
+                    className="absolute top-0 left-0 right-0 p-4 text-white text-xl font-bold rounded-t-2xl bg-gradient-to-t from-transparent to-black/70">
                     {recipe.name}
                 </div>
                 <Image
@@ -32,13 +34,8 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
                 />
                 {isHovered && (
                     <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
-                        <Button
-                            className="px-4 py-2 mx-2 rounded-md"
-                            variant={'default'}
-                            onClick={() => console.log('See the recipe')}
-                        >
-                            See Recipe
-                        </Button>
+
+                        <ViewRecipeModal recipe={recipe}/>
                         <Button
                             className="px-4 py-2 mx-2 rounded-md"
                             variant={'ghost'}
