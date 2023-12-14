@@ -1,7 +1,6 @@
 "use client";
 import React, {useState} from 'react';
 import Image from 'next/image';
-import defaultRecipeImage from '@/public/images/food.png';
 import {Button} from "@/components/ui/button";
 import {Recipe} from "@/api/recipe-api";
 import ViewRecipeModal from "@/components/recipe/view-recipe";
@@ -28,7 +27,9 @@ const RecipeCard = ({recipe}: RecipeCardProps) => {
                     {recipe.name}
                 </div>
                 <Image
-                    src={defaultRecipeImage}
+                    src={recipe.imageLink}
+                    width={500}
+                    height={500}
                     alt={recipe.name}
                     className="rounded-b-2xl w-full h-[200px] object-cover block"
                 />

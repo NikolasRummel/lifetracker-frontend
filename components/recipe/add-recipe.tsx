@@ -9,6 +9,7 @@ export default function AddRecipeModal() {
     const [isOpen, setIsOpen] = useState(false);
     const [recipeName, setRecipeName] = useState('');
     const [ingredients, setIngredients] = useState<string[]>([]);
+    const [imageLink, setImageLink] = useState<string>('');
 
     function closeModal() {
         setIsOpen(false);
@@ -26,6 +27,7 @@ export default function AddRecipeModal() {
 
         const newRecipe: Recipe = {
             name: recipeName,
+            imageLink: imageLink,
             ingredients: ingredients.map((ingredientName) => ({
                 name: ingredientName,
             })),
@@ -98,6 +100,21 @@ export default function AddRecipeModal() {
                                                     placeholder="Recipe Name"
                                                     value={recipeName}
                                                     onChange={(e) => setRecipeName(e.target.value)}
+                                                />
+                                            </div>
+
+
+                                            <div>
+                                                <label htmlFor="name" className="font-bold">
+                                                    ImageLink
+                                                </label>
+                                                <input
+                                                    id="name"
+                                                    type="text"
+                                                    className="w-full border-gray-300 rounded p-2 mb-2"
+                                                    placeholder="https://example.com/image.png"
+                                                    value={imageLink}
+                                                    onChange={(e) => setImageLink(e.target.value)}
                                                 />
                                             </div>
 

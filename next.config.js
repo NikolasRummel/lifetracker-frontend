@@ -10,6 +10,10 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'openweathermap.org',
             },
+            {
+                protocol: 'https',
+                hostname: 'cdn.discordapp.com',
+            },
         ],
     },
 }
