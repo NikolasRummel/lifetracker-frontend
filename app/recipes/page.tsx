@@ -13,7 +13,7 @@ export default async function RecipePage() {
                 <AddRecipeModal/>
             </div>
 
-            <div className="grid grid-cols-3 gap-8 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 mt-12">
                 {recipes.map(recipe => (
                     <RecipeCard key={recipe.id} recipe={recipe} />
                 ))}

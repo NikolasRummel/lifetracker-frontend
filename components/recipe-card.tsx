@@ -31,11 +31,10 @@ const RecipeCard = ({recipe}: RecipeCardProps) => {
                     width={500}
                     height={500}
                     alt={recipe.name}
-                    className="rounded-b-2xl w-full h-[200px] object-cover block"
+                    className="rounded-b-2xl w-full h-[250px] lg:h-[350px] object-cover block"
                 />
                 {isHovered && (
                     <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
-
                         <ViewRecipeModal recipe={recipe}/>
                         <Button
                             className="px-4 py-2 mx-2 rounded-md"
